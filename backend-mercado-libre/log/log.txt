@@ -1,0 +1,70 @@
+Tue May 13 2025 18:59:05 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Tue May 13 2025 19:14:04 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Tue May 13 2025 19:17:04 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt malformed
+Tue May 13 2025 19:21:43 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Tue May 13 2025 19:22:27 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Fri May 16 2025 13:28:23 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Fri May 16 2025 13:28:40 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Fri May 16 2025 13:29:03 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Fri May 16 2025 13:29:11 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Fri May 16 2025 13:31:33 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Fri May 16 2025 13:31:45 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Fri May 16 2025 13:31:51 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Fri May 16 2025 13:47:57 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Fri May 16 2025 13:50:46 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Fri May 16 2025 13:51:25 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Fri May 16 2025 13:51:48 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Fri May 16 2025 13:56:04 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 16:37:37 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 16:43:59 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 16:54:37 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 16:56:01 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 16:56:06 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:21:16 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Mon May 19 2025 17:21:51 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:23:20 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:23:57 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:24:07 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:28:47 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:29:31 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 17:29:44 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:55:41 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:55:59 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 17:56:25 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:58:00 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 17:58:04 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 18:49:10 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 18:49:38 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 18:49:45 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 18:50:52 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 18:52:28 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 19:01:05 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 19:06:25 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 19:06:28 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:09:11 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:10:23 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 19:10:27 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 19:10:29 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:11:40 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 19:11:55 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:22:33 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:26:29 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 62 (line 5 column 1)
+Mon May 19 2025 19:26:38 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 62 (line 5 column 1)
+Mon May 19 2025 19:27:50 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 19:40:29 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot set headers after they are sent to the client
+Mon May 19 2025 19:48:31 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:48:59 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:56:50 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:57:41 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 19:59:48 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 20:00:47 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 57 (line 4 column 1)
+Mon May 19 2025 20:02:48 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 20:02:58 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 20:10:53 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 20:11:01 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - Cannot read properties of undefined (reading 'startsWith')
+Mon May 19 2025 22:25:51 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Mon May 19 2025 22:26:45 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - Acceso denegado
+Mon May 19 2025 22:28:17 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 19 2025 22:35:00 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - Acceso denegado
+Mon May 19 2025 22:35:18 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - Acceso denegado
+Mon May 19 2025 22:42:30 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
