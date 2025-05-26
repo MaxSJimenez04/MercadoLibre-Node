@@ -9,12 +9,12 @@ router.get('/', Authorize('Administrador'), usuarios.getAll)
 router.get('/:email', Authorize('Administrador'), usuarios.get)
 
 //POST: api/usuarios
-router.post('/', Authorize('Administrador'), usuarios.create)
+router.post('/', Authorize('Administrador,Usuario'), usuarios.create)
 
 //PUT: api/usuarios/email
-router.put('/:email', Authorize('Administrador'), usuarios.update)
+router.put('/:email', Authorize('Administrador,Usuario'), usuarios.update)
 
 //DELETE
-router.delete('/:email', Authorize('Administrador'), usuarios.delete)
+router.delete('/:email', Authorize('Administrador,Usuario'), usuarios.delete)
 
 module.exports = router

@@ -10,15 +10,18 @@ module.exports = {
 
     const AdministradorUUID = crypto.randomUUID()
     const UsuarioUUID = crypto.randomUUID()
+    const EmpleadoUUID = crypto.randomUUID()
 
     await queryInterface.bulkInsert('rol', [
       {id: AdministradorUUID, nombre: 'Administrador', createdAt: new Date(), updatedAt: new Date()},
+      {id: EmpleadoUUID, nombre: 'Empleado', createdAt: new Date(), updatedAt: new Date()},
       {id: UsuarioUUID, nombre: 'Usuario', createdAt: new Date(), updatedAt: new Date()}
     ]);
 
     await queryInterface.bulkInsert('usuario', [
-      { id: crypto.randomUUID(), email: 'gvera@uv', passwordHash: await bcrypt.hash('patito', 10), nombre: 'Guillermo Vera', rolid: AdministradorUUID, protegido: true, createdAt: new Date(), updatedAt: new Date()},
-      { id: crypto.randomUUID(), email: 'patito@uv.mx', passwordHash: await bcrypt.hash('patito', 10), nombre: 'Usuario patito', rolid: UsuarioUUID, createdAt: new Date(), updatedAt: new Date()}
+      { id: crypto.randomUUID(), email: 'MLAgvera@mercadolibre.com', passwordHash: await bcrypt.hash('P@ssw0rd', 10), nombre: 'Guillermo Vera', rolid: AdministradorUUID, protegido: true, createdAt: new Date(), updatedAt: new Date()},
+      {id: crypto.randomUUID(), email: 'MLEmax@mercadolibre.com', passwordHash: await bcrypt.hash('p@sswordSegur0', 10), nombre: 'Maximiliano Soto', rolid: EmpleadoUUID, protegido: true, createdAt: new Date(), updatedAt: new Date()},
+      { id: crypto.randomUUID(), email: 'patito@uv.mx', passwordHash: await bcrypt.hash('Pr0gr4S3gur4', 10), nombre: 'Anas platyrhynchos domesticus', rolid: UsuarioUUID, protegido: false, createdAt: new Date(), updatedAt: new Date()}
     ]);
   },
 

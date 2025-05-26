@@ -4,24 +4,24 @@ const Authorize = require('../middlewares/auth.middleware')
 const { route } = require('./categorias.routes')
 
 //GET: api/productos
-router.get('/', Authorize('Usuario,Administrador'), productos.getAll)
+router.get('/', Authorize('Usuario,Administrador,Empleado'), productos.getAll)
 
 //GET: api/productos/5
-router.get('/:id', Authorize('Usuario,Administrador'), productos.get)
+router.get('/:id', Authorize('Usuario,Administrador,Empleado'), productos.get)
 
 //POST: api/productos
-router.post('/', Authorize('Administrador'), productos.productoValidator, productos.create)
+router.post('/', Authorize('Empleado'), productos.productoValidator, productos.create)
 
 //PUT: api/productos/5
-router.put('/:id', Authorize('Administrador'), productos.productoValidator, productos.update)
+router.put('/:id', Authorize('Empleado'), productos.productoValidator, productos.update)
 
 //DELETE: api/productos/5
-router.delete('/:id', Authorize('Administrador'), productos.delete)
+router.delete('/:id', Authorize('Empleado'), productos.delete)
 
 //POST: api/productos/5/categoria
-router.post('/:id/categoria', Authorize('Administrador'), productos.asignaCategoria);
+router.post('/:id/categoria', Authorize('Empleado'), productos.asignaCategoria);
 
 //DELETE: api/productos/5/categoria
-router.delete('/:id/categoria/:categoriaid', Authorize('Administrador'), productos.eliminaCategoria);
+router.delete('/:id/categoria/:categoriaid', Authorize('Empleado'), productos.eliminaCategoria);
 
 module.exports = router

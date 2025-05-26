@@ -54,7 +54,7 @@
                 {
                     <a asp-controller="Comprar" class="btn btn-primary">Comenzar a comprar</a>
                 }
-                else if (User.FindFirstValue(ClaimTypes.Role) == "Administrador")
+                else if (User.FindFirstValue(ClaimTypes.Role) == "Administrador" || User.FindFirstValue(ClaimTypes.Role) == "Empleado")
                 {
                     <a asp-controller="Productos" class="btn btn-primary">Administrar catálogo</a>
                 }

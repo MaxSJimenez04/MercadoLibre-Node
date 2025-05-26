@@ -22,7 +22,7 @@
 </div>
 <div class="row small mb-3">
     <div class="col">
-        @if (ViewBag.SoloAdmin == true)
+        @if (ViewBag.SoloEmpleado == true)
         {
             <a class="text-decoration-none" asp-action="Crear" title="Crear nuevo">Crear nueva</a>
         }
@@ -50,7 +50,7 @@
                         @Html.DisplayNameFor(model => model.First().Precio)
                     </th>
                     <th></th>
-                    @if (ViewBag.SoloAdmin == true)
+                    @if (ViewBag.SoloEmpleado == true)
                     {
                         <th></th>
                         <th></th>
@@ -84,7 +84,7 @@
                             <a class="text-decoration-none small text-uppercase" asp-action="Detalle"
                                 asp-route-id="@item.ProductoId">Detalle</a>
                         </td>
-                        @if (ViewBag.SoloAdmin == true)
+                        @if (ViewBag.SoloEmpleado == true)
                         {
                             <td width="1">
                                 <a class="text-decoration-none small text-uppercase" asp-action="Categorias"

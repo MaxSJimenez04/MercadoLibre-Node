@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace frontendnet;
 
-[Authorize(Roles = "Administrador")]
+[Authorize(Roles = "Empleado,Administrador")]
 public class ProductosController(ProductosClientService productos, 
         CategoriasClientService categorias, 
         ArchivosClientService archivos, 
@@ -25,8 +25,8 @@ public class ProductosController(ProductosClientService productos,
             if(ex.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 return RedirectToAction("Salir", "Auth");
         }
-        if(User.FindFirstValue(ClaimTypes.Role) == "Administrador")
-            ViewBag.SoloAdmin = true;
+        if(User.FindFirstValue(ClaimTypes.Role) == "Empleado")
+            ViewBag.SoloEmpleado = true;
 
         ViewBag.Url = configuration["UrlWebAPI"];
         ViewBag.search = s;

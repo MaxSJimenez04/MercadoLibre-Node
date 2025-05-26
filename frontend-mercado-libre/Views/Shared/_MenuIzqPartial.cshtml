@@ -9,7 +9,7 @@
             <a class="nav-link" asp-controller="Comprar" asp-action="Index">Comprar</a>
             <a class="nav-link" asp-controller="Carrito" asp-action="Index"><i class="bi bi-cart"></i> Carrito</a>
         }
-        else if (User.FindFirstValue(ClaimTypes.Role) == "Administrador")
+        else if (User.FindFirstValue(ClaimTypes.Role) == "Administrador" || User.FindFirstValue(ClaimTypes.Role) == "Empleado")
         {
             <a class="nav-link" asp-controller="Productos" asp-action="Index">Productos</a>
             <a class="nav-link" asp-controller="Categorias" asp-action="Index">Categorias</a>

@@ -181,3 +181,7 @@ Sun May 25 2025 21:56:08 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo 
 Sun May 25 2025 21:57:59 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Op is not defined
 Sun May 25 2025 21:58:05 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Op is not defined
 Sun May 25 2025 21:58:09 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Op is not defined
+Mon May 26 2025 08:27:49 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 08:27:58 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 08:28:16 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 08:47:26 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
