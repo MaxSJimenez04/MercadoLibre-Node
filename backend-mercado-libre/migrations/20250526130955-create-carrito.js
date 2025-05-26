@@ -23,6 +23,14 @@ module.exports = {
         allowNull: false,
         defaultValue: true
       },
+      total: {
+        type: Sequelize.DECIMAL(10,2),
+        allowNull: false
+      },
+      fechacompra: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

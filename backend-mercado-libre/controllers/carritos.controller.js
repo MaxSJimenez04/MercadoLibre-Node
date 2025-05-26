@@ -1,0 +1,218 @@
+const { Model, where } = require('sequelize');
+const { producto, usuario, carrito, productocarrito } = require('../models');
+const { body, param, validationResult } = require('express-validator');
+
+let self = {}
+
+self.carritoValidator = [
+    body('idusuario', 'Usuario requerido').not().isEmpty(),
+    body('idproducto', 'Producto requerido').not().isEmpty(),
+    body('cantidad', 'Cantidad debe ser número positivo').optional().isInt({ min: 1 })
+]
+
+self.validaciones = {
+  crearCarrito: [
+    body('idusuario', 'El ID de usuario es obligatorio y debe ser un UUID válido').isUUID()
+  ],
+
+  agregarProducto: [
+    param('idcarrito', 'El ID del carrito debe ser UUID válido').isUUID(),
+    body('idproducto', 'El ID del producto debe ser un número entero positivo').isInt({ min: 1 }),
+    body('cantidad', 'La cantidad debe ser un entero positivo mayor que 0').isInt({ min: 1 })
+  ],
+
+  modificarCantidad: [
+    param('idcarrito', 'El ID del carrito debe ser UUID válido').isUUID(),
+    param('idproducto', 'El ID del producto debe ser un número entero positivo').isInt({ min: 1 }),
+    body('cantidad', 'La cantidad debe ser un entero positivo mayor que 0').isInt({ min: 1 })
+  ],
+
+  eliminarProducto: [
+    param('idcarrito', 'El ID del carrito debe ser UUID válido').isUUID(),
+    param('idproducto', 'El ID del producto debe ser un número entero positivo').isInt({ min: 1 })
+  ]
+}
+
+//GET api/carritos/historial/:email
+self.getAll = async function(req, res, next) {
+    try {
+        const { email } = req.params;
+        const user = await usuario.findOne({ where: { email } });
+        if (!user) return res.status(404).send();
+
+        const data = await carrito.findAll({
+          where: { usuarioid: user.id, actual: false },
+          include: {
+            model: productocarrito,
+            as: 'itemsCarrito',
+            include: { model: producto, as: 'producto' }
+          },
+          order: [['createdAt', 'DESC']]
+        });
+
+        res.status(200).json(data);
+    } catch (error) {
+        next(error);
+    }
+}
+
+//GET api/carritos/actual
+self.get = async function(req, res, next) {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) return res.status(400).json(errors.array());
+
+        const { email } = req.params;
+        const user = await usuario.findOne({ where: { email } });
+        if (!user) return res.status(404).send();
+
+        await carrito.update({ actual: false }, { where: { usuarioid: user.id, actual: true } });
+
+        const data = await carrito.create({
+          id: require('crypto').randomUUID(),
+          usuarioid: user.id,
+          actual: true
+        });
+
+        req.bitacora('carrito.crear', data.id);
+        res.status(201).json(data);
+    } catch (error) {
+        console.error("Error: ", error);
+        next(error);
+    }
+}
+
+//POST api/carritos
+self.create = async function(req, res, next) {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) return res.status(400).json(errors.array());
+
+        const { idusuario } = req.body;
+
+        // Finalizar otros carritos activos, si hubiera
+        await carrito.update({ actual: false }, { where: { idusuario, actual: true } });
+
+        let data = await carrito.create({
+            id: require('crypto').randomUUID(),
+            idusuario,
+            actual: true
+        });
+
+        req.bitacora('carrito.crear', data.id);
+        res.status(201).json(data);
+    } catch (error) {
+        next(error);
+    }
+}
+
+//PUT api/carritos/comprar/:id
+self.comprar = async function(req, res, next) {
+    try {
+    const { id } = req.params;
+
+    const carritoActual = await carrito.findByPk(id);
+
+    if (!carritoActual || !carritoActual.actual) {
+      return res.status(400).json({ message: 'Carrito no válido o ya comprado.' });
+    }
+
+    const items = await productocarrito.findAll({ where: { idcarrito: id } });
+    const total = items.reduce((sum, item) => sum + parseFloat(item.subtotal), 0);
+
+    await carritoActual.update({
+      actual: false,
+      fechacompra: new Date(),
+      total
+    });
+
+    await carrito.create({
+      idusuario: carritoActual.idusuario,
+      actual: true
+    });
+
+    res.status(200).json({ message: 'Compra realizada con éxito.' });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
+//POST api/carritos/:idcarrito/productos
+self.agregaProducto = async function(req, res, next) {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) return res.status(400).json(errors.array());
+
+        const { idcarrito } = req.params;
+        const { idproducto, cantidad } = req.body;
+
+        const prod = await producto.findByPk(idproducto);
+        if (!prod) return res.status(404).send();
+
+        const subtotal = parseFloat((prod.precio * cantidad).toFixed(2));
+
+        await productocarrito.create({
+            idcarrito,
+            idproducto,
+            cantidad,
+            subtotal
+        });
+
+        req.bitacora('carrito.agregarProducto', `${idcarrito}:${idproducto}`);
+        res.status(201).send();
+    } catch (error) {
+        next(error);
+    }
+}
+
+//PUT api/carritos/:idcarrito/productos/:idproducto
+self.modificarCantidad = async function(req, res, next) {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) return res.status(400).json(errors.array());
+
+        const { idcarrito, idproducto } = req.params;
+        const { cantidad } = req.body;
+
+        const prod = await producto.findByPk(idproducto);
+        if (!prod) return res.status(404).send();
+
+        const subtotal = parseFloat((prod.precio * cantidad).toFixed(2));
+
+        let result = await productocarrito.update(
+            { cantidad, subtotal },
+            { where: { idcarrito, idproducto } }
+        );
+
+        if (result[0] === 0) return res.status(404).send();
+
+        req.bitacora('carrito.modificarProducto', `${idcarrito}:${idproducto}`);
+        res.status(204).send();
+    } catch (error) {
+        next(error);
+    }
+}
+
+//DELETE api/carritos/:idcarrito/productos/:idproducto
+self.quitarProducto = async function(req, res, next) {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) return res.status(400).json(errors.array());
+
+        const { idcarrito, idproducto } = req.params;
+
+        let result = await productocarrito.destroy({
+            where: { idcarrito, idproducto }
+        });
+
+        if (result === 0) return res.status(404).send();
+
+        req.bitacora('carrito.eliminarProducto', `${idcarrito}:${idproducto}`);
+        res.status(204).send();
+    } catch (error) {
+        next(error);
+    }
+}
+
+module.exports = self;

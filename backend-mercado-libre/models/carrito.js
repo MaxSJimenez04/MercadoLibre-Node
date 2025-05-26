@@ -3,8 +3,9 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class carrito extends Model {
     static associate(models) {
-      carrito.hasMany(models.usuario, {foreignKey: 'usuarioid'});
+      carrito.belongsTo(models.usuario, {foreignKey: 'usuarioid'});
       carrito.belongsToMany(models.producto, {through: 'productocarrito', foreignKey: 'idcarrito'});
+      carrito.hasMany(models.productocarrito, { foreignKey: 'idcarrito', as: 'itemsCarrito' });
     }
   }
   carrito.init({
@@ -12,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       primaryKey: true
     },
-    idusuario:{
+    usuarioid:{
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -21,11 +22,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: true
     },
+    total: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
+      defaultValue: 0.00
+    },
     fechacompra:{
       type: DataTypes.DATE
     }
   }, {
     sequelize,
+    freezeTableName: true,
     modelName: 'carrito',
   });
   return carrito;
