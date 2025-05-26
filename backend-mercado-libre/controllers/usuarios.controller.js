@@ -42,7 +42,7 @@ self.get = async function (req, res, next) {
 self.create = async function (req, res, next) {
     try {
         const rolusuario = await rol.findOne({where: { nombre: req.body.rol} })
-
+        
         const data = await usuario.create({
             id: crypto.randomUUID(),
             email: req.body.email,
@@ -50,6 +50,7 @@ self.create = async function (req, res, next) {
             nombre: req.body.nombre,
             rolid: rolusuario.id
         })
+        console.log("contraseña:" + req.body.password);
 
         req.bitacora("usuarios.crear", data.email)
         res.status(201).json({
@@ -87,19 +88,22 @@ self.update = async function (req, res, next) {
 //DELETE: api/usuarios/email
 self.delete = async function (req, res, next) {
     try {
-        const email = req.params.email
-        let data = await usuario.findOne({where: {email:email}})
+        const email = req.params.email;
 
-        if(data.protegido) return res.status(403).send()
+    const usuarioEncontrado = await usuario.findOne({ where: { email } });
 
-            data = await usuario.destroy({where: {email: email}})
-            if( data === 1){
-                req.bitacora("usuarios.eliminar", email)
-                return res.status(204).send()
-            }
-            
-            res.status(403).send()
+    if (!usuarioEncontrado) {
+      return res.status(404);
+    }
 
+    if (usuarioEncontrado.protegido) {
+      return res.status(403);
+    }
+
+    await usuario.destroy({ where: { email } });
+
+    req.bitacora("usuarios.eliminar", email);
+    res.status(204).send();
     } catch (error) {
         next(error)
     }

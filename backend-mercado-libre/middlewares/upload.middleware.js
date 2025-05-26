@@ -2,6 +2,7 @@ const multer = require('multer');
 
 //Filtro para recibir únicamente imagenes JPG
 const imageFilter = (req, file, cb) => {
+    console.log("Archivo: ", file.originalname, file.mimetype)
     if (file.mimetype.startsWith("image/jpeg") && file.originalname.endsWith(".jpg")) {
         cb(null, true);
     } else {
@@ -9,7 +10,7 @@ const imageFilter = (req, file, cb) => {
     }
 };
 
-//Se configurra el almacenamiento para los archivos suubidos
+//Se configura el almacenamiento para los archivos subidos
 var storage = multer.diskStorage({
     destination: (req, file, cb) =>{
         cb(null, "uploads/");

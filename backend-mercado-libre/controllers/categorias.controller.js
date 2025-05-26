@@ -57,39 +57,50 @@ self.update = async function (req, res, next) {
 
             let id = req.params.id
             let body = req.body
+
+            if (id != null) {
+                res.staus(404).send()
+            }
             let data = await categoria.update(body, {where: {id: id} })
             if(data[0] == 0)
                 return res.status(404).send()
 
             //Bitácora
             req.bitacora("categoria.editar", id)
-            req.status(204).send()
+            res.status(204).send()
     } catch (error) {
         next(error)
     }
 }
 
 //DELETE: api/categorias
-self.delete = async function (res, req, next) {
-    try {
-        const id = req.params.id
-        let data = await categoria.findByPk(id)
-        if (!data) 
-            return res.status(404).send()
-        
+    self.delete = async function (req, res, next) {
+        try {
 
-        if(data.protegida)
-            return res.status(400).send()
+            if(req.params.id == null){
+                return res.status(404).send()
+            }
+            const id = req.params.id
+            
 
-        data = await categoria.destroy({where: { id: id} })
-        if (data === 1) {
-            req.bitacora("categoria.eliminar", id)
-            return res.status(204).send()
+            let data = await categoria.findByPk(id)
+            if (!data) {
+                return res.status(404).send()
+            }
+
+            if(data.protegida){
+                return res.status(400).send()
+            }
+
+            data = await categoria.destroy({where: { id: id} })
+            if (data === 1) {
+                req.bitacora("categoria.eliminar", id)
+                return res.status(204).send()
+            }
+            res.status(404).send
+        } catch (error) {
+            next(error)
         }
-        res.status(404).send
-    } catch (error) {
-        next(error)
     }
-}
 
 module.exports = self

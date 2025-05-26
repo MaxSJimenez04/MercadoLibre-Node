@@ -6,9 +6,7 @@ const { GeneraToken } = require('../services/jwttoken.service')
 const Authorize = (rol) => {
     return async (req, res, next) =>{
         try {
-            console.log('Middleware Authorize activado')
             const authHeader = req.header('Authorization')
-            console.log('authHeader:', authHeader)
             const error = new Error('Acceso denegado');
             error.statusCode = 401;
             if(!authHeader || !authHeader.startsWith('Bearer ')){

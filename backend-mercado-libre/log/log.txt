@@ -68,3 +68,116 @@ Mon May 19 2025 22:28:17 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo 
 Mon May 19 2025 22:35:00 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - Acceso denegado
 Mon May 19 2025 22:35:18 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - Acceso denegado
 Mon May 19 2025 22:42:30 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Tue May 20 2025 13:58:36 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Tue May 20 2025 14:01:14 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Tue May 20 2025 14:03:44 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Tue May 20 2025 14:09:20 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Tue May 20 2025 14:12:09 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Tue May 20 2025 14:14:44 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Tue May 20 2025 14:25:47 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Tue May 20 2025 14:26:50 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Tue May 20 2025 14:34:34 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - notNull Violation: usuario.passwordhash cannot be null
+Tue May 20 2025 14:35:06 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - notNull Violation: usuario.passwordhash cannot be null
+Tue May 20 2025 14:37:04 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - notNull Violation: usuario.passwordhash cannot be null
+Tue May 20 2025 14:37:20 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Tue May 20 2025 14:41:42 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - notNull Violation: usuario.passwordhash cannot be null
+Tue May 20 2025 14:42:02 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - notNull Violation: usuario.passwordhash cannot be null
+Tue May 20 2025 14:44:13 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - notNull Violation: usuario.passwordhash cannot be null
+Tue May 20 2025 14:53:18 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Tue May 20 2025 14:53:44 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - notNull Violation: usuario.passwordhash cannot be null
+Tue May 20 2025 14:54:14 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - notNull Violation: usuario.passwordhash cannot be null
+Thu May 22 2025 09:44:02 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Validation error
+Thu May 22 2025 10:27:11 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Thu May 22 2025 10:48:21 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Thu May 22 2025 10:49:22 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Thu May 22 2025 10:49:31 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Thu May 22 2025 10:49:42 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Thu May 22 2025 10:49:49 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot read properties of null (reading 'protegido')
+Thu May 22 2025 10:50:08 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - WHERE parameter "nombre" has invalid "undefined" value
+Thu May 22 2025 10:52:39 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot read properties of null (reading 'protegido')
+Thu May 22 2025 10:53:16 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot read properties of null (reading 'protegido')
+Thu May 22 2025 10:55:32 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot read properties of null (reading 'protegido')
+Thu May 22 2025 10:55:34 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot read properties of null (reading 'protegido')
+Thu May 22 2025 10:55:50 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv - Cannot read properties of null (reading 'protegido')
+Thu May 22 2025 13:14:44 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of null (reading 'protegido')
+Thu May 22 2025 13:32:26 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - req.status is not a function
+Thu May 22 2025 13:34:12 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 22 2025 13:45:49 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 22 2025 13:48:24 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 22 2025 13:49:43 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 22 2025 13:50:00 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 22 2025 13:51:14 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 22 2025 13:53:21 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Thu May 22 2025 13:53:49 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 22 2025 13:54:54 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 22 2025 13:59:37 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Thu May 22 2025 14:01:24 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Thu May 22 2025 14:24:25 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 14:26:23 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 14:26:25 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 14:26:25 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 14:26:25 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 14:26:25 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 14:26:26 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 14:26:26 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 14:26:26 GMT-0600 (hora estándar central)-400 - ::ffff:127.0.0.1 - Anónimo - Expected double-quoted property name in JSON at position 118 (line 5 column 1)
+Thu May 22 2025 18:02:42 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - {"errors":[{"type":"field","msg":"El campo {0} es obligatorio","path":"titulo","location":"body"},{"type":"field","msg":"El campo {0} es obligatorio","path":"precio","location":"body"},{"type":"field","msg":"El campo {0} es obligatorio","path":"precio","location":"body"}]}
+Thu May 22 2025 18:04:17 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - {"errors":[{"type":"field","msg":"El campo {0} es obligatorio","path":"titulo","location":"body"},{"type":"field","msg":"El campo {0} es obligatorio","path":"precio","location":"body"},{"type":"field","msg":"El campo {0} es obligatorio","path":"precio","location":"body"}]}
+Thu May 22 2025 18:06:06 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item is not defined
+Thu May 22 2025 18:06:06 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item is not defined
+Thu May 22 2025 18:07:18 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item is not defined
+Thu May 22 2025 18:13:29 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item is not defined
+Thu May 22 2025 18:13:29 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item is not defined
+Thu May 22 2025 18:13:58 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item is not defined
+Thu May 22 2025 18:14:00 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item is not defined
+Thu May 22 2025 18:14:32 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item.categoria is not a function
+Thu May 22 2025 18:20:01 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - item.categoria is not a function
+Thu May 22 2025 18:22:19 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Sat May 24 2025 19:32:46 GMT-0600 (hora estándar central)-500 - ::1 - correoejemplo@example.com - Op is not defined
+Sat May 24 2025 19:32:51 GMT-0600 (hora estándar central)-500 - ::1 - correoejemplo@example.com - Op is not defined
+Sat May 24 2025 19:33:03 GMT-0600 (hora estándar central)-500 - ::1 - correoejemplo@example.com - Op is not defined
+Sat May 24 2025 19:33:20 GMT-0600 (hora estándar central)-500 - ::1 - correoejemplo@example.com - Op is not defined
+Sat May 24 2025 19:33:24 GMT-0600 (hora estándar central)-500 - ::1 - correoejemplo@example.com - Op is not defined
+Sat May 24 2025 19:48:01 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 19:49:17 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 19:49:32 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:24:04 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:26:24 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Sat May 24 2025 20:26:37 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:30:59 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:31:33 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:36:16 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:45:29 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:46:40 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:46:46 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:47:22 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:47:22 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:51:31 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt malformed
+Sat May 24 2025 20:51:55 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt malformed
+Sat May 24 2025 20:54:25 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 20:56:17 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Sat May 24 2025 20:57:05 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 21:09:50 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sat May 24 2025 21:10:25 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Sun May 25 2025 10:48:23 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - Anónimo - Multipart: Boundary not found
+Sun May 25 2025 11:08:32 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Sun May 25 2025 11:15:18 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Sun May 25 2025 11:20:07 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - gvera@uv.mx - Multipart: Boundary not found
+Sun May 25 2025 11:22:26 GMT-0600 (hora estándar central)-401 - ::ffff:127.0.0.1 - Anónimo - jwt expired
+Sun May 25 2025 20:14:04 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:14:15 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:14:42 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:14:44 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:16:41 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:21:25 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:28:02 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:34:35 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Sun May 25 2025 20:34:46 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:34:54 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 20:39:30 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - ruta is not defined
+Sun May 25 2025 20:41:26 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - ruta is not defined
+Sun May 25 2025 20:41:56 GMT-0600 (hora estándar central)-500 - ::1 - gvera@uv.mx - Unknown column 'size' in 'field list'
+Sun May 25 2025 21:56:08 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Sun May 25 2025 21:57:59 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Op is not defined
+Sun May 25 2025 21:58:05 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Op is not defined
+Sun May 25 2025 21:58:09 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Op is not defined

@@ -24,7 +24,7 @@ self.getAll = async function (req, res, next) {
 
         let data = await producto.findAll({
             where: filters,
-            attibutes: [['id', 'productoId'], 'titulo', 'descripcion', 'precio', 'archivoid'],
+            attributes: [['id', 'productoId'], 'titulo', 'descripcion', 'precio', 'archivoid'],
             include:{
                 model: categoria,
                 as: 'categorias',
@@ -127,10 +127,10 @@ self.asignaCategoria = async function (req, res, next) {
         let itemToAssign = await categoria.findByPk(req.body.categoriaid);
         if(!itemToAssign) return res.status(404).send()
 
-        let intem = await producto.findByPk(req.params.id);
+        let item = await producto.findByPk(req.params.id);
         if(!item) return res.status(404).send()
 
-        await item.categoria(itemToAssign)
+        await item.addCategoria(itemToAssign)
 
         req.bitacora("productoscategoria.agregar", `${req.params.id}:${req.body.categoriaid}`)
         res.status(204).send()

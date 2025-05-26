@@ -50,17 +50,21 @@ self.get = async function (req, res, next) {
 self.create = async function (req, res, next) {
     try {
         console.log(req.file)
-        if(req.file == undefined) return res.status(400).json('El archivo es obligatorio.');
 
         let binario = null;
         let indb = false;
+        
+        if(req.file == undefined) return res.status(400).json('El archivo es obligatorio.');
+       
         if(process.env.FILES_IN_BD == "true"){
+            const ruta = "uploads/" + req.file.filename;
             binario = fs.readFileSync("uploads/" + req.file.filename)
+
             fs.existsSync("uploads/" + req.file.filename) && fs.unlinkSync("uploads/"+ req.file.filename)
             indb = true; 
         }
 
-        let adta = await archivo.create({
+        let data = await archivo.create({
             mime: req.file.mimetype,
             indb: indb,
             nombre: req.file.filename,
@@ -70,7 +74,7 @@ self.create = async function (req, res, next) {
         })
 
         req.bitacora("archivos.crear", data.id)
-        req.status(201).json({
+        res.status(201).json({
             id: data.id,
             mime: req.file.mimetype,
             indb: indb,

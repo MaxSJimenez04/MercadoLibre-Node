@@ -17,8 +17,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      indb: {
+      size: {
         type: Sequelize.STRING,
+        allowNull: false
+      },
+      indb: {
+        type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: true
       },
