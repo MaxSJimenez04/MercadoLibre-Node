@@ -1,17 +1,98 @@
+@model frontendnet.Models.Carrito
+
 @{
-    ViewData["Title"] = "Carrito de compras";
-    ViewData["SubTitle"] = "Listado";
+    ViewData["Title"] = "Carrito de Compras";
+    bool esCarritoActual = Model.Actual;
 }
-<h2 class="text-center mb-3">@ViewData["Title"] <small class="text-muted fs-5">@ViewData["SubTitle"]</small></h2>
 
-<div class="row small mb-3">
-    <div class="col text-end">
-        Mostrando @Model.Count() elementos
-    </div>
-</div>
+<h2 class="text-center mb-4">@ViewData["Title"]</h2>
 
-<div class="mt-5">
-    <div class="alert alert-warning" role="alert">
-        No se han encontrado elementos. Inténtelo de nuevo más tarde.
+@if (Model.ItemsCarrito == null || !Model.ItemsCarrito.Any())
+{
+    <div class="alert alert-warning text-center">
+        No hay productos en el carrito.
     </div>
-</div>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead class="table-light text-center">
+            <tr>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                @if (esCarritoActual)
+                {
+                    <th>Acciones</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ItemsCarrito)
+            {
+                <tr>
+                    <td class="text-center" style="width: 100px;">
+                        @if (item.Producto?.ArchivoId != null)
+                        {
+                            <img src="~/archivos/@item.Producto.ArchivoId" class="img-thumbnail" style="max-height: 75px;" />
+                        }
+                        else
+                        {
+                            <span class="text-muted">Sin imagen</span>
+                        }
+                    </td>
+                    <td>@item.Producto?.Titulo</td>
+                    <td>@item.Producto?.Precio.ToString("C")</td>
+                    <td class="text-center">
+                        @if (esCarritoActual)
+                        {
+                            <form asp-action="ModificarCantidad" method="post" class="d-flex justify-content-center gap-1">
+                                <input type="hidden" name="IdCarrito" value="@item.IdCarrito" />
+                                <input type="hidden" name="IdProducto" value="@item.IdProducto" />
+                                <input type="number" name="Cantidad" value="@item.Cantidad" min="1" class="form-control form-control-sm text-center" style="width: 70px;" />
+                                <button type="submit" class="btn btn-sm btn-primary">Actualizar</button>
+                            </form>
+                        }
+                        else
+                        {
+                            @item.Cantidad
+                        }
+                    </td>
+                    <td>@item.Subtotal?.ToString("C")</td>
+                    @if (esCarritoActual)
+                    {
+                        <td class="text-center">
+                            <form asp-action="EliminarProducto" method="post">
+                                <input type="hidden" name="IdCarrito" value="@item.IdCarrito" />
+                                <input type="hidden" name="IdProducto" value="@item.IdProducto" />
+                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                            </form>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class="text-end"><strong>Total:</strong></td>
+                <td colspan="2" class="fw-bold">@Model.Total.ToString("C")</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    @if (esCarritoActual)
+    {
+        <form asp-action="Comprar" method="post" class="text-end">
+            <input type="hidden" name="IdCarrito" value="@Model.Id" />
+            <button type="submit" class="btn btn-success btn-lg">Comprar</button>
+        </form>
+    }
+    else
+    {
+        <div class="alert alert-info text-end">
+            Fecha de compra: <strong>@Model.FechaCompra?.ToString("g")</strong>
+        </div>
+    }
+}

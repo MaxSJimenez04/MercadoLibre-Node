@@ -26,5 +26,9 @@ public class ComprarController(ProductosClientService productos, IConfiguration 
         return View(lista);
     }
     
+     public Task<IActionResult> IrAlCarrito()
+    {
+        return Task.FromResult<IActionResult>(RedirectToAction("Index", "Carrito"));
+    }
     
 }

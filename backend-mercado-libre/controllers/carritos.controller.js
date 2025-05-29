@@ -58,7 +58,7 @@ self.getAll = async function(req, res, next) {
 
 //GET api/carritos/actual
 self.get = async function(req, res, next) {
-    try {
+     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) return res.status(400).json(errors.array());
 
@@ -66,16 +66,29 @@ self.get = async function(req, res, next) {
         const user = await usuario.findOne({ where: { email } });
         if (!user) return res.status(404).send();
 
-        await carrito.update({ actual: false }, { where: { usuarioid: user.id, actual: true } });
-
-        const data = await carrito.create({
-          id: require('crypto').randomUUID(),
-          usuarioid: user.id,
-          actual: true
+        let data = await carrito.findOne({
+            where: { usuarioid: user.id, actual: true },
+            include: [{
+                model: productocarrito,
+                as: 'itemsCarrito',
+                include: [{
+                    model: producto,
+                    as: 'producto'
+                }]
+            }],
+            order: [['createdAt', 'DESC']]
         });
 
-        req.bitacora('carrito.crear', data.id);
-        res.status(201).json(data);
+        if (!data) {
+            data = await carrito.create({
+                id: require('crypto').randomUUID(),
+                usuarioid: user.id,
+                actual: true
+            });
+            req.bitacora('carrito.crear', data.id);
+        }
+
+        res.status(data._options.isNewRecord ? 201 : 200).json(data);
     } catch (error) {
         console.error("Error: ", error);
         next(error);
@@ -120,18 +133,16 @@ self.comprar = async function(req, res, next) {
     const items = await productocarrito.findAll({ where: { idcarrito: id } });
     const total = items.reduce((sum, item) => sum + parseFloat(item.subtotal), 0);
 
-    await carritoActual.update({
-      actual: false,
-      fechacompra: new Date(),
-      total
-    });
+    await carrito.update({ actual: false }, { where: { usuarioid: user.id, actual: true } });
 
-    await carrito.create({
-      idusuario: carritoActual.idusuario,
-      actual: true
-    });
+        const data = await carrito.create({
+          id: require('crypto').randomUUID(),
+          usuarioid: user.id,
+          actual: true
+        });
 
-    res.status(200).json({ message: 'Compra realizada con éxito.' });
+        req.bitacora('carrito.crear', data.id);
+        res.status(201).json(data);
   } catch (error) {
     console.error(error);
     next(error);
@@ -150,14 +161,29 @@ self.agregaProducto = async function(req, res, next) {
         const prod = await producto.findByPk(idproducto);
         if (!prod) return res.status(404).send();
 
-        const subtotal = parseFloat((prod.precio * cantidad).toFixed(2));
-
-        await productocarrito.create({
-            idcarrito,
-            idproducto,
-            cantidad,
-            subtotal
+        const existente = await productocarrito.findOne({
+            where: { idcarrito, idproducto }
         });
+
+        if (existente) {
+            
+            const nuevaCantidad = existente.cantidad + cantidad;
+            const nuevoSubtotal = parseFloat((prod.precio * nuevaCantidad).toFixed(2));
+
+            await existente.update({
+                cantidad: nuevaCantidad,
+                subtotal: nuevoSubtotal
+            });
+        } else {
+            const subtotal = parseFloat((prod.precio * cantidad).toFixed(2));
+
+            await productocarrito.create({
+                idcarrito,
+                idproducto,
+                cantidad,
+                subtotal
+            });
+        }
 
         req.bitacora('carrito.agregarProducto', `${idcarrito}:${idproducto}`);
         res.status(201).send();

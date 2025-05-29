@@ -51,7 +51,7 @@ public class AuthController(AuthClientService auth) : Controller
         return View(model);
     }
 
-    [Authorize(Roles = "Administrador, Usuario")]
+    [Authorize(Roles = "Administrador, Usuario, Empleado")]
     public async Task<IActionResult> SalirAsync()
     {
         // Cierra la sesión

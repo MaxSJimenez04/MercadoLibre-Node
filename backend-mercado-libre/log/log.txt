@@ -220,3 +220,19 @@ Mon May 26 2025 14:14:22 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.
 Mon May 26 2025 14:14:46 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - patito@uv.mx - Unknown column 'idusuario' in 'where clause'
 Mon May 26 2025 14:15:47 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - patito@uv.mx - notNull Violation: carrito.total cannot be null
 Mon May 26 2025 14:18:04 GMT-0600 (hora estándar central)-500 - ::ffff:127.0.0.1 - patito@uv.mx - WHERE parameter "email" has invalid "undefined" value
+Mon May 26 2025 22:16:29 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Mon May 26 2025 22:17:08 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 22:17:44 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 22:17:57 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 22:20:41 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 22:22:19 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 22:23:48 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 22:25:11 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 22:29:45 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 22:30:48 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Mon May 26 2025 23:58:56 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Tue May 27 2025 00:21:30 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Tue May 27 2025 14:08:02 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Wed May 28 2025 11:26:12 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - productocarrito is associated to carrito using an alias. You must use the 'as' keyword to specify the alias within your include statement.
+Wed May 28 2025 11:26:12 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - productocarrito is associated to carrito using an alias. You must use the 'as' keyword to specify the alias within your include statement.
+Wed May 28 2025 11:46:57 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired

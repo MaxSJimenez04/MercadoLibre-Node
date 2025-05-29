@@ -10,7 +10,7 @@ public class UsuarioPwd
     public required string Email { get; set; }
 
     [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-    [MinLength(6, ErrorMessage = "El campo {0} debe tener un mínimo de {1} caracteres.")]
+    [MinLength(8, ErrorMessage = "El campo {0} debe tener un mínimo de {1} caracteres.")]
     [DataType(DataType.Password)]
     [Display(Name = "Contraseña")]
     public required string Password { get; set; }

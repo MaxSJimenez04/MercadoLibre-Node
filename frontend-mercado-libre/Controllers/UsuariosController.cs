@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace frontendnet;
 
-[Authorize(Roles = "Empleado,Administrador")]
+[Authorize(Roles = "Administrador")]
 public class UsuariosController(UsuariosClientService usuarios, RolesClientService roles) : Controller
 {
     public async Task<IActionResult> Index()
