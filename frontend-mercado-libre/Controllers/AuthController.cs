@@ -52,11 +52,13 @@ public class AuthController(AuthClientService auth) : Controller
     }
 
     [Authorize(Roles = "Administrador, Usuario, Empleado")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> SalirAsync()
     {
-        // Cierra la sesión
+        Console.WriteLine(">>>>> SalirAsync ejecutado");
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        //Si no, se redirige a la página inicial
+        Console.WriteLine(">>>>> SalirAsync redirigiendo...");
         return RedirectToAction("Index", "Auth");
     }
 }

@@ -37,32 +37,32 @@
                         @Html.DisplayNameFor(model => model.First().Protegida)
                     </th>
                     <th></th>
-                    <th></th>
-                    <th></th>
+                    @if (ViewBag.SoloEmpleado == true)
+                    {
+                        <th></th>
+                        <th></th>
+                    }
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CategoriaId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nombre)
-                        </td>
-                        <td>
-                            @(item.Protegida ? "No" : "Sí")
-                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.CategoriaId)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                        <td>@(item.Protegida ? "No" : "Sí")</td>
                         <td width="1">
                             <a class="text-decoration-none small text-uppercase" asp-action="Detalle" asp-route-id="@item.CategoriaId">Detalle</a>
                         </td>
-                        <td width="1">
-                            <a class="text-decoration-none small text-uppercase" asp-action="Editar" asp-route-id="@item.CategoriaId">Editar</a>
-                        </td>
-                        <td width="1">
-                            <a class="text-decoration-none small text-uppercase" asp-action="Eliminar" asp-route-id="@item.CategoriaId">Eliminar</a>
-                        </td>
+                        @if (ViewBag.SoloEmpleado == true)
+                        {
+                            <td width="1">
+                                <a class="text-decoration-none small text-uppercase" asp-action="Editar" asp-route-id="@item.CategoriaId">Editar</a>
+                            </td>
+                            <td width="1">
+                                <a class="text-decoration-none small text-uppercase" asp-action="Eliminar" asp-route-id="@item.CategoriaId">Eliminar</a>
+                            </td>
+                        }
                     </tr>
                 }
             </tbody>

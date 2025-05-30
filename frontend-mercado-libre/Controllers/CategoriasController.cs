@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using frontendnet.Models;
 using frontendnet.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -20,6 +21,10 @@ public class CategoriasController(CategoriasClientService categorias) : Controll
             if(ex.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 return RedirectToAction("Salir", "Auth");
         }
+        
+        if (User.FindFirstValue(ClaimTypes.Role) == "Empleado")
+            ViewBag.SoloEmpleado = true;
+
         return View(lista);
     }
 

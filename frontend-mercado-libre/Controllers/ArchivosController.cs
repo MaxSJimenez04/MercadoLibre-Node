@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using frontendnet.Models;
 using frontendnet.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -21,6 +22,9 @@ public class ArchivosController(ArchivosClientService archivos, IConfiguration c
                 return RedirectToAction("Salir", "Auth");
         }
         ViewBag.Url = configuration["UrlWebAPI"];
+        if (User.FindFirstValue(ClaimTypes.Role) == "Empleado")
+            ViewBag.SoloEmpleado = true;
+
         return View(lista);
     }
 

@@ -1,19 +1,44 @@
-<div class="navbar-nav small">
-    <div class="navbar-text form-check form switch form-check-reverse me-2">
+<div class="navbar-nav small align-items-center d-flex gap-2">
+    <!-- Modo oscuro -->
+    <div class="form-check form-switch form-check-reverse mb-0">
         <input class="form-check-input" type="checkbox" id="darkModeSwitch">
-        <label class="form-check-label" for="darkModeSwitch"><i class="bi bi-moon-stars modo-luz"></i></label>
+        <label class="form-check-label" for="darkModeSwitch">
+            <i class="bi bi-moon-stars modo-luz"></i>
+        </label>
     </div>
+
     @if (User.Identity?.IsAuthenticated == true)
     {
-        <a class="nav-link" asp-controller="Perfil" asp-action="IndexAsync">Hola @(User.Identity.Name)!</a>
-        <a class="nav-link" asp-asp-controller="Auth" asp-action="Salir">Salir</a>
+        <!-- Bienvenida -->
+        <span class="nav-link mb-0">Hola, <strong>@User.Identity.Name</strong>!</span>
+
+        <!-- Perfil -->
+        <a class="nav-link" asp-controller="Perfil" asp-action="Index">Perfil</a>
+
+        <!-- Botón de salir -->
+        <form id="logoutForm" asp-controller="Auth" asp-action="Salir" method="post" class="d-inline">
+            <button type="submit" class="btn btn-link nav-link p-0 m-0">Salir</button>
+        </form>
+
+        @section Scripts {
+            <script>
+                document.getElementById("logoutForm").addEventListener("submit", function () {
+                    setTimeout(function () {
+                        window.location.href = '/Auth/Index';
+                    }, 100);
+                });
+            </script>
+        }
     }
     else
     {
+        <!-- Iniciar sesión y registro -->
         <a class="nav-link" asp-controller="Auth" asp-action="Index">Iniciar Sesión</a>
         <a class="nav-link" asp-controller="RegistroUsuarios" asp-action="Index">Registrarse</a>
     }
-    <div class="navbar-text">
-        <img src="~/images/netlogo.jpg" height="20">
+
+    <!-- Logo -->
+    <div class="navbar-text ms-2">
+        <img src="~/images/netlogo.jpg" height="24" alt="Logo .NET" class="align-middle">
     </div>
 </div>
