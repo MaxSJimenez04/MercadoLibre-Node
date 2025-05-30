@@ -15,6 +15,11 @@ public class CarritosClientService(HttpClient client)
         return await client.GetFromJsonAsync<Carrito>($"api/carritos/actual/{email}");
     }
 
+    public async Task<Carrito?> GetDetalleAsync(string idCarrito)
+    {
+        return await client.GetFromJsonAsync<Carrito>($"api/carritos/detalle/{idCarrito}");
+    }
+
     public async Task PostAsync(Carrito carrito)
     {
         var response = await client.PostAsJsonAsync("api/carritos", carrito);

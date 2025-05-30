@@ -1,0 +1,78 @@
+@model frontendnet.Models.Carrito
+
+@{
+    ViewData["Title"] = "Detalle de Compra";
+}
+
+@if (Model == null)
+{
+    <div class="alert alert-danger text-center">
+        No se pudo cargar el detalle del carrito.
+    </div>
+    return;
+}
+
+<h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+@if (Model.ItemsCarrito == null || !Model.ItemsCarrito.Any())
+{
+    <div class="alert alert-warning text-center">
+        Este carrito no contiene productos.
+    </div>
+}
+else
+{
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Compra realizada el:</h4>
+                <span class="fw-semibold fs-5 text-primary">
+                    @(Model.FechaCompra.HasValue ? Model.FechaCompra.Value.ToString("f") : "Fecha no disponible")
+                </span>
+            </div>
+
+            <table class="table table-borderless">
+                <thead class="border-bottom text-muted">
+                    <tr class="text-start">
+                        <th style="width: 60%;">Producto</th>
+                        <th style="width: 20%;" class="text-center">Cantidad</th>
+                        <th style="width: 20%;" class="text-end">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ItemsCarrito)
+                    {
+                        <tr style="font-size: 1.2rem;">
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    @if (item.Producto?.ArchivoId != null)
+                                    {
+                                        <img src='@((item.Producto.ArchivoId == null) ? "https://placehold.co/100x80/FFF/999?text=Artículo" : $"{ViewBag.Url}/api/archivos/{item.Producto.ArchivoId}")'
+                                            alt="@item.Producto.Titulo" 
+                                            class="img-fluid" 
+                                            data-url="@ViewBag.Url"
+                                            style="max-height: 120px;" />
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">Sin imagen</span>
+                                    }
+
+                                    <span>@item.Producto?.Titulo</span>
+                                </div>
+                            </td>
+                            <td class="text-center align-middle">@item.Cantidad</td>
+                            <td class="text-end align-middle fw-semibold">@item.Subtotal?.ToString("C")</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="text-end fs-4 fw-bold text-dark">Total:</td>
+                        <td class="text-end fs-4 fw-bold text-success">@Model.Total.ToString("C")</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+}

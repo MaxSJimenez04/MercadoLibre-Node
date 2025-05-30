@@ -4,10 +4,16 @@ const { body, param, validationResult } = require('express-validator');
 
 let self = {}
 
+async function calcularTotalCarrito(idcarrito) {
+  const items = await productocarrito.findAll({ where: { idcarrito } });
+  const total = items.reduce((sum, item) => sum + parseFloat(item.subtotal), 0);
+  return parseFloat(total.toFixed(2));
+}
+
 self.carritoValidator = [
-    body('idusuario', 'Usuario requerido').not().isEmpty(),
-    body('idproducto', 'Producto requerido').not().isEmpty(),
-    body('cantidad', 'Cantidad debe ser número positivo').optional().isInt({ min: 1 })
+    body('id', 'Carrito no encontrado').not().isEmpty(),
+    body('cantidad', 'Cantidad debe ser número positivo').optional().isInt({ min: 0 }),
+    body('email', 'Email requerido').notEmpty().isEmail()
 ]
 
 self.validaciones = {
@@ -88,12 +94,44 @@ self.get = async function(req, res, next) {
             req.bitacora('carrito.crear', data.id);
         }
 
+
         res.status(data._options.isNewRecord ? 201 : 200).json(data);
     } catch (error) {
         console.error("Error: ", error);
         next(error);
     }
 }
+
+//GET api/carritos/detalle/5
+self.detalle = async function(req, res, next) {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) return res.status(400).json(errors.array());
+
+        const { idcarrito: id } = req.params;
+
+        const data = await carrito.findOne({
+            where: {id: id },
+            include: [{
+                model: productocarrito,
+                as: 'itemsCarrito',
+                include: [{
+                    model: producto,
+                    as: 'producto'
+                }]
+            }],
+            order: [['createdAt', 'DESC']]
+        });
+
+        if (!data) return res.status(404).send();
+
+        res.status(200).json(data);
+    } catch (error) {
+        console.error("Error: ", error);
+        next(error);
+    }
+}
+
 
 //POST api/carritos
 self.create = async function(req, res, next) {
@@ -122,30 +160,45 @@ self.create = async function(req, res, next) {
 //PUT api/carritos/comprar/:id
 self.comprar = async function(req, res, next) {
     try {
-    const { id } = req.params;
+        const errors = validationResult(req);
+        console.log(errors);
+        if (!errors.isEmpty()) return res.status(400).json(errors.array());
 
-    const carritoActual = await carrito.findByPk(id);
+        const email = req.body.email;
+        const fechacompra = req.body.fechacompra;
+        console.log(fechacompra);
+        const user = await usuario.findOne({ where: { email } });
+        if (!user) return res.status(404).send();
 
-    if (!carritoActual || !carritoActual.actual) {
-      return res.status(400).json({ message: 'Carrito no válido o ya comprado.' });
-    }
+        const { id } = req.params;
 
-    const items = await productocarrito.findAll({ where: { idcarrito: id } });
-    const total = items.reduce((sum, item) => sum + parseFloat(item.subtotal), 0);
+        if (!user.id || !id) {
+            return res.status(400).json({ message: "Faltan datos requeridos (idusuario o id del carrito)." });
+        }
 
-    await carrito.update({ actual: false }, { where: { usuarioid: user.id, actual: true } });
+        const carritoActual = await carrito.findByPk(id);
 
-        const data = await carrito.create({
-          id: require('crypto').randomUUID(),
-          usuarioid: user.id,
-          actual: true
-        });
+        if (!carritoActual || !carritoActual.actual) {
+            return res.status(400).json({ message: 'Carrito no válido o ya comprado.' });
+        }
 
-        req.bitacora('carrito.crear', data.id);
-        res.status(201).json(data);
-  } catch (error) {
-    console.error(error);
-    next(error);
+        const items = await productocarrito.findAll({ where: { idcarrito: id } });
+        const total = items.reduce((sum, item) => sum + parseFloat(item.subtotal), 0);
+
+
+        await carrito.update({ actual: false, fechacompra: fechacompra }, { where: {usuarioid: user.id, actual: true } });
+
+            const data = await carrito.create({
+                id: require('crypto').randomUUID(),
+                usuarioid: user.id,
+                actual: true
+            });
+
+            req.bitacora('carrito.crear', data.id);
+            res.status(201).json(data);
+    } catch (error) {
+        console.error(error);
+        next(error);
   }
 }
 
@@ -153,6 +206,7 @@ self.comprar = async function(req, res, next) {
 self.agregaProducto = async function(req, res, next) {
     try {
         const errors = validationResult(req);
+        console.log('Errores de validación:', errors.array());
         if (!errors.isEmpty()) return res.status(400).json(errors.array());
 
         const { idcarrito } = req.params;
@@ -185,6 +239,9 @@ self.agregaProducto = async function(req, res, next) {
             });
         }
 
+        const total = await calcularTotalCarrito(idcarrito);
+        await carrito.update({ total }, { where: { id: idcarrito } });
+
         req.bitacora('carrito.agregarProducto', `${idcarrito}:${idproducto}`);
         res.status(201).send();
     } catch (error) {
@@ -213,6 +270,9 @@ self.modificarCantidad = async function(req, res, next) {
 
         if (result[0] === 0) return res.status(404).send();
 
+        const total = await calcularTotalCarrito(idcarrito);
+        await carrito.update({ total }, { where: { id: idcarrito } });
+
         req.bitacora('carrito.modificarProducto', `${idcarrito}:${idproducto}`);
         res.status(204).send();
     } catch (error) {
@@ -233,6 +293,9 @@ self.quitarProducto = async function(req, res, next) {
         });
 
         if (result === 0) return res.status(404).send();
+
+        const total = await calcularTotalCarrito(idcarrito);
+        await carrito.update({ total }, { where: { id: idcarrito } });
 
         req.bitacora('carrito.eliminarProducto', `${idcarrito}:${idproducto}`);
         res.status(204).send();

@@ -9,7 +9,7 @@ namespace frontendnet;
 [Authorize]
 public class PerfilController(PerfilClientService perfil) : Controller
 {
-    public async Task<IActionResult> IndexASync()
+    public async Task<IActionResult> IndexAsync()
     {
         AuthUser? usuario = null;
         try{

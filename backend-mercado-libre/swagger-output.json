@@ -603,6 +603,24 @@
         }
       }
     },
+    "/api/carritos/detalle/{idcarrito}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "idcarrito",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/api/carritos/": {
       "post": {
         "description": "",

@@ -8,6 +8,9 @@ router.get('/historial/:email', Authorize('Usuario'), carritos.getAll);
 //GET api/carritos/actual/5
 router.get('/actual/:email', Authorize('Usuario'), carritos.get);
 
+//GET api/carritos/detalle/5
+router.get('/detalle/:idcarrito', Authorize('Usuario'), carritos.detalle);
+
 //POST api/carritos/
 router.post('/', Authorize('Usuario'), carritos.carritoValidator, carritos.create);
 

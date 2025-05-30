@@ -36,7 +36,11 @@ else
                     <td class="text-center" style="width: 100px;">
                         @if (item.Producto?.ArchivoId != null)
                         {
-                            <img src="~/archivos/@item.Producto.ArchivoId" class="img-thumbnail" style="max-height: 75px;" />
+                            <img src='@((item.Producto.ArchivoId == null) ? "https://placehold.co/70x40/FFF/999?text=Artículo" : $"{ViewBag.Url}/api/archivos/{item.Producto.ArchivoId}")' 
+                                alt="@item.Producto.Titulo" 
+                                class="img-fluid" 
+                                data-url="@ViewBag.Url"
+                                style="max-height: 75px;" />
                         }
                         else
                         {
@@ -84,7 +88,7 @@ else
 
     @if (esCarritoActual)
     {
-        <form asp-action="Comprar" method="post" class="text-end">
+        <form asp-controller="Carrito" asp-action="Comprar" method="post" class="text-end">
             <input type="hidden" name="IdCarrito" value="@Model.Id" />
             <button type="submit" class="btn btn-success btn-lg">Comprar</button>
         </form>

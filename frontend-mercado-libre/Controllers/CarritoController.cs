@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace frontendnet;
 
 [Authorize(Roles = "Usuario")]
-public class CarritoController(CarritosClientService carrito) : Controller
+public class CarritoController(CarritosClientService carrito, IConfiguration configuration) : Controller
 {
     private string GetUserEmail()
     {
@@ -16,6 +16,7 @@ public class CarritoController(CarritosClientService carrito) : Controller
 
     public async Task<IActionResult> Index()
     {
+        ViewBag.Url = configuration["UrlWebAPI"];
         string email = GetUserEmail();
         if (string.IsNullOrEmpty(email))
             return RedirectToAction("Home", "AccessDenied");
@@ -31,11 +32,11 @@ public class CarritoController(CarritosClientService carrito) : Controller
                 return RedirectToAction("Salir", "Auth");
 
             ViewBag.Error = "No se pudo obtener el carrito. Intenta más tarde.";
-            return View(new Carrito { ItemsCarrito = new List<ProductoCarrito>(), Total = 0, Actual = true });
+            return View(new Carrito {Email = email, ItemsCarrito = new List<ProductoCarrito>(), Total = 0, Actual = true });
         }
 
         if (carritoActual == null)
-            carritoActual = new Carrito { ItemsCarrito = new List<ProductoCarrito>(), Total = 0, Actual = true };
+            carritoActual = new Carrito {Email = email, ItemsCarrito = new List<ProductoCarrito>(), Total = 0, Actual = true };
 
         return View(carritoActual);
     }
@@ -49,12 +50,12 @@ public class CarritoController(CarritosClientService carrito) : Controller
 
         try
         {
-            
+
             var carritoActual = await carrito.GetActualAsync(email);
             if (carritoActual == null)
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Detalle", "Productos", new {id = IdProducto});
 
-            // 2. Crear el producto a agregar
+
             var producto = new ProductoCarrito
             {
                 IdCarrito = carritoActual.Id!,
@@ -62,16 +63,19 @@ public class CarritoController(CarritosClientService carrito) : Controller
                 Cantidad = Cantidad
             };
 
-            // 3. Llamar al servicio para agregarlo
             await carrito.AgregarProductoAsync(carritoActual.Id!, producto);
+            return RedirectToAction("Detalle", "Productos", new {id = IdProducto});
         }
         catch (HttpRequestException ex)
         {
             if (ex.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 return RedirectToAction("Salir", "Auth");
+
+            if (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+                return RedirectToAction("Error", "Home");
         }
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction("Detalle", "Productos", new {id = IdProducto});
     }
 
     [HttpPost]
@@ -134,6 +138,7 @@ public class CarritoController(CarritosClientService carrito) : Controller
 
             carritoActual.Actual = false;
             carritoActual.FechaCompra = DateTime.Now;
+            carritoActual.Email = email;
 
             await carrito.ComprarAsync(IdCarrito, carritoActual);
         }

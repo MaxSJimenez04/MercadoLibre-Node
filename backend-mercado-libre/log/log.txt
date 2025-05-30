@@ -236,3 +236,29 @@ Tue May 27 2025 14:08:02 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo 
 Wed May 28 2025 11:26:12 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - productocarrito is associated to carrito using an alias. You must use the 'as' keyword to specify the alias within your include statement.
 Wed May 28 2025 11:26:12 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - productocarrito is associated to carrito using an alias. You must use the 'as' keyword to specify the alias within your include statement.
 Wed May 28 2025 11:46:57 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Wed May 28 2025 23:35:33 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - user is not defined
+Wed May 28 2025 23:35:54 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - user is not defined
+Thu May 29 2025 00:18:47 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - user is not defined
+Thu May 29 2025 00:19:03 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - user is not defined
+Thu May 29 2025 07:16:54 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - id is not defined
+Thu May 29 2025 07:17:02 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - id is not defined
+Thu May 29 2025 07:17:03 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - id is not defined
+Thu May 29 2025 07:21:17 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Out of range value for column 'subtotal' at row 1
+Thu May 29 2025 07:21:50 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - user is not defined
+Thu May 29 2025 07:26:20 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 29 2025 07:30:42 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "idusuario" has invalid "undefined" value
+Thu May 29 2025 07:38:03 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Thu May 29 2025 07:38:33 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Unknown column 'idusuario' in 'where clause'
+Thu May 29 2025 09:41:23 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "email" has invalid "undefined" value
+Thu May 29 2025 09:50:15 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Cannot destructure property 'fechacompra' of 'req.body.fechacompra' as it is undefined.
+Thu May 29 2025 13:30:16 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 29 2025 13:32:09 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - Cannot read properties of undefined (reading 'id')
+Thu May 29 2025 14:08:47 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "idcarrito" has invalid "undefined" value
+Thu May 29 2025 14:10:34 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
+Thu May 29 2025 14:30:07 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - jwt expired
+Thu May 29 2025 14:35:22 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
+Thu May 29 2025 14:36:13 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
+Thu May 29 2025 14:45:01 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
+Thu May 29 2025 14:45:08 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
+Thu May 29 2025 14:45:54 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
+Thu May 29 2025 14:48:33 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value

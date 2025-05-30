@@ -5,7 +5,7 @@
     </div>
     @if (User.Identity?.IsAuthenticated == true)
     {
-        <a class="nav-link" asp-controller="Perfil">Hola @(User.Identity.Name)!</a>
+        <a class="nav-link" asp-controller="Perfil" asp-action="IndexAsync">Hola @(User.Identity.Name)!</a>
         <a class="nav-link" asp-asp-controller="Auth" asp-action="Salir">Salir</a>
     }
     else

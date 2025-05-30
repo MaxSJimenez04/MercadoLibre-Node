@@ -30,12 +30,12 @@ public class RegistroUsuariosController(UsuariosClientService usuario) : Control
                 if (ex.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                     return RedirectToAction("Salir", "Auth");
 
-                // ⚠️ Mostrar mensaje real del error HTTP
+                
                 ModelState.AddModelError("", $"Error de red: {ex.Message}");
             }
             catch (Exception ex)
             {
-                // ⚠️ Mostrar cualquier otro error
+                
                 ModelState.AddModelError("", $"Error inesperado: {ex.Message}");
             }
         }
