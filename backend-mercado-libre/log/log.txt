@@ -262,3 +262,6 @@ Thu May 29 2025 14:45:01 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv
 Thu May 29 2025 14:45:08 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
 Thu May 29 2025 14:45:54 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
 Thu May 29 2025 14:48:33 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv.mx - WHERE parameter "id" has invalid "undefined" value
+Thu Jun 05 2025 18:05:38 GMT-0600 (hora estándar central)-500 - ::1 - Anónimo - connect ECONNREFUSED 192.168.56.109:3306
+Thu Jun 05 2025 18:06:54 GMT-0600 (hora estándar central)-500 - ::1 - Anónimo - connect ECONNREFUSED 192.168.56.109:3306
+Thu Jun 05 2025 18:07:50 GMT-0600 (hora estándar central)-500 - ::1 - Anónimo - connect ECONNREFUSED 192.168.56.109:3306

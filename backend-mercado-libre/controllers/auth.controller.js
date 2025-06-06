@@ -33,6 +33,7 @@ self.login = async function (req, res, next) {
             jwt: token
         })
     } catch (error) {
+        console.log("Error: ", error);
         next(error)
     }
 }
