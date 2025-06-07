@@ -6,6 +6,16 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            var mensaje = '@ViewBag.MensajeModal';
+            if (mensaje) {
+                $('#mensajeModalBody').text(mensaje);
+                var modal = new bootstrap.Modal(document.getElementById('mensajeModal'));
+                modal.show();
+            }
+        });
+    </script>
 }
 
 <nav aria-label="breadcrumb">
@@ -45,5 +55,20 @@
     <div class="text-center mt-3">
         <button id="btnEnviar" type="submit" class="btn btn-sm btn-primary">Registrarse</button>
         <a class="btn btn-sm btn-outline-secondary" asp-controller="Home" asp-action="Index" title="Cancelar">Cancelar</a>
+    </div>
+    
+    <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="mensajeModalLabel">Mensaje</h5>
+        </div>
+        <div class="modal-body" id="mensajeModalBody">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+        </div>
+    </div>
     </div>
 </form>

@@ -58,12 +58,10 @@ self.update = async function (req, res, next) {
             let id = req.params.id
             let body = req.body
 
-            console.log("ID:" + id)
             if (id == null) {
                 return res.status(404).send()
             }
             let data = await categoria.update(body, {where: {id: id} })
-            console.log("Data: " + data[0])
             if(data[0] == 0)
                 return res.status(404).send()
 

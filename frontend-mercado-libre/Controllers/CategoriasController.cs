@@ -100,7 +100,8 @@ public class CategoriasController(CategoriasClientService categorias) : Controll
             }
             catch (HttpRequestException ex)
             {
-                if(ex.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                Console.WriteLine(ex);
+                if (ex.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                     return RedirectToAction("Salir", "Auth");
             }
         }

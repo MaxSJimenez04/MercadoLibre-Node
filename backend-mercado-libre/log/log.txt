@@ -265,3 +265,11 @@ Thu May 29 2025 14:48:33 GMT-0600 (hora estándar central)-500 - ::1 - patito@uv
 Thu Jun 05 2025 18:05:38 GMT-0600 (hora estándar central)-500 - ::1 - Anónimo - connect ECONNREFUSED 192.168.56.109:3306
 Thu Jun 05 2025 18:06:54 GMT-0600 (hora estándar central)-500 - ::1 - Anónimo - connect ECONNREFUSED 192.168.56.109:3306
 Thu Jun 05 2025 18:07:50 GMT-0600 (hora estándar central)-500 - ::1 - Anónimo - connect ECONNREFUSED 192.168.56.109:3306
+Fri Jun 06 2025 22:52:56 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Fri Jun 06 2025 22:54:10 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Fri Jun 06 2025 23:10:15 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - Acceso denegado
+Fri Jun 06 2025 23:17:15 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - roles is not defined
+Fri Jun 06 2025 23:20:50 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - roles is not defined
+Fri Jun 06 2025 23:26:45 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - rolesString is not defined
+Fri Jun 06 2025 23:26:52 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - rolesString is not defined
+Fri Jun 06 2025 23:27:03 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - rolesString is not defined

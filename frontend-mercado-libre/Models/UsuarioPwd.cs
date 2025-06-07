@@ -12,8 +12,8 @@ public class UsuarioPwd
     [Required(ErrorMessage = "El campo {0} es obligatorio.")]
     [MinLength(8, ErrorMessage = "El campo {0} debe tener un mínimo de {1} caracteres.")]
     [DataType(DataType.Password)]
-    [RegularExpression(@"^(?=(.[@_$]){2,}).$", 
-        ErrorMessage = "El campo {0} debe contener al menos 2 caracteres especiales(@,_o $).")]
+    [RegularExpression(@"^(?:[^@$]*[@$]){2,}.*$", 
+    ErrorMessage = "El campo {0} debe contener al menos 2 caracteres especiales (@, _ o $).")]
     [Display(Name = "Contraseña")]
 
     public required string Password { get; set; }

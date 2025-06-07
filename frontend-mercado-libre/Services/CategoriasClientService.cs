@@ -22,7 +22,7 @@ public class CategoriasClientService(HttpClient client)
 
     public async Task PutAsync(Categoria categoria)
     {
-        var response = await client.PostAsJsonAsync($"api/categorias/{categoria.CategoriaId}", categoria);
+        var response = await client.PutAsJsonAsync($"api/categorias/{categoria.CategoriaId}", categoria);
         response.EnsureSuccessStatusCode();
     }
 
