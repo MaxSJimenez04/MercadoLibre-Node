@@ -304,4 +304,5 @@ self.quitarProducto = async function(req, res, next) {
     }
 }
 
+self.calcularTotalCarrito = calcularTotalCarrito;
 module.exports = self;

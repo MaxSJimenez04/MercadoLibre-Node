@@ -22,7 +22,7 @@ self.login = async function (req, res, next) {
         if(!passwordMatch)
             return res.status(401).json({mensaje: 'Usuario o contraseña incorrecto. '})
 
-        token = GeneraToken(data.email, data.nombre, data.rol)
+        var token = GeneraToken(data.email, data.nombre, data.rol)
 
         req.bitacora("usuario.login", data.email)
 
