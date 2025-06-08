@@ -273,3 +273,4 @@ Fri Jun 06 2025 23:20:50 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo 
 Fri Jun 06 2025 23:26:45 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - rolesString is not defined
 Fri Jun 06 2025 23:26:52 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - rolesString is not defined
 Fri Jun 06 2025 23:27:03 GMT-0600 (hora estándar central)-401 - ::1 - Anónimo - rolesString is not defined
+Sat Jun 07 2025 13:03:34 GMT-0600 (hora estándar central)-500 - ::1 - Anónimo - Validation error

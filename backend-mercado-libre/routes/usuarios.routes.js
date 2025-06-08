@@ -11,6 +11,9 @@ router.get('/:email', Authorize('Administrador'), usuarios.get)
 //POST: api/usuarios
 router.post('/', Authorize('Administrador'), usuarios.create)
 
+//POST: api/usuarios/registro
+router.post('/registro', usuarios.create)
+
 //PUT: api/usuarios/email
 router.put('/:email', Authorize('Administrador,Usuario'), usuarios.update)
 

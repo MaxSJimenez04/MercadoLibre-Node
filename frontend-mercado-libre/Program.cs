@@ -36,7 +36,7 @@ builder.Services.AddHttpClient<BitacoraClientService>(httpClient => { httpClient
 builder.Services.AddHttpClient<CarritosClientService>(httpClient => { httpClient.BaseAddress = new Uri(UrlWebApi!); })
     .AddHttpMessageHandler<EnviaBearerDelegatingHandler>()
     .AddHttpMessageHandler<RefrescaTokenDelegatingHandler>();
-
+builder.Services.AddHttpClient<RegistroClientService>(httpClient => { httpClient.BaseAddress = new Uri(UrlWebApi!); });
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

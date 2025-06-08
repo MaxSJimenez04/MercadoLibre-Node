@@ -6,7 +6,7 @@ const doc = {
         title: 'Backend Node.js API',
         description: 'Esta es una API en node.js'
     },
-    host: 'localhost:3000'
+    host: process.env.HOST
    
 }
 
